@@ -98,4 +98,5 @@ done
 
 # storing the plot of convergence
 mkdir ./results
+pip install matplotlib
 python3 ./result.py $threshold
