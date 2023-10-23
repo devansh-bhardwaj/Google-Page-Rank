@@ -20,7 +20,6 @@ def combine_reducer():
             continue
 
         increment = beta * (score / degree)
-
         print('%s\t%s' % (value, increment))
 
 def add_mapper():
