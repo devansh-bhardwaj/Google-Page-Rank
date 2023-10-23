@@ -4,12 +4,10 @@ N = None
 beta = None
 
 def combine_reducer():
-    
     degree = 0
     score = 0
       
     for line in sys.stdin:
-
         line = line.strip()
         node, value = line.split()
 
@@ -26,11 +24,9 @@ def combine_reducer():
         print('%s\t%s' % (value, increment))
 
 def add_mapper():
-
     sum = 0
   
     for line in sys.stdin:
-
         line = line.strip()
         node, increment = line.split()
         sum += float(increment)
@@ -39,13 +35,11 @@ def add_mapper():
     print('\t%s' % sum)
 
 def add_reducer():
-
     current_node = None
     current_score = 0
     sum = None
 
     for line in sys.stdin:
-
         line = line.strip()
 
         if len(line.split()) == 1:
@@ -71,12 +65,10 @@ def add_reducer():
     print('\t%s' % sum)
 
 def score_reducer():
-
     current_node = None
     flag = 0
   
     for line in sys.stdin:
-
         line = line.strip()
 
         if len(line.split()) == 1:
@@ -107,16 +99,13 @@ def score_reducer():
             current_node = node[:-1]
 
 if __name__ == '__main__':
-
     stage = sys.argv[1]
 
     if len(sys.argv) > 2:
-    	try:
-    		N = int(sys.argv[2])
-    	except:
-    		beta = float(sys.argv[2])
+        try:
+            N = int(sys.argv[2])
+        except:
+            beta = float(sys.argv[2])
 
     func = getattr(sys.modules[__name__], stage)
     func()
-
- 
